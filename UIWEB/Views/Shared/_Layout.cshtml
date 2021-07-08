@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@*@ViewData["Title"]*@ Inicio - ACADEMIA DE CURSOS</title>
+    <link href="~/css_/reset.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/css_/index.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/fonts/style.css" rel="stylesheet" type="text/css">
+ 
+</head>
+<body>
+    <header>
+        <img src="~/Imagenes/Portada.png" alt="ACADEMIADECURSOS.COM" title="ACADEMIADECURSOS.COM">
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><span class="icon icon-home"></span>Inicio</a></li>
+                <li><a asp-area="" asp-controller="Modulo1" asp-action="VistaCursos"><span class="icon icon-books"></span>Cursos</a></li>
+                <li><a asp-area="" asp-controller="Modulo1" asp-action="VistaDocente"><span class="icon icon-pencil"></span>Docentes</a></li>
+                <li><a asp-area="" asp-controller="Modulo1" asp-action="VistaAlumnos"><span class="icon icon-address-book"></span>Alumnos</a></li>
+                <li><a asp-area="" asp-controller="Modulo1" asp-action="VistaCalificaciones"><span class="icon icon-calculator"></span>Calificaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-columna">
+                    <h3>ACADEMIA DE CURSOS</h3>
+                </div>
+                <div class="footer-columna">
+                    <h3>Similar</h3>
+                    <a href="#">Cursos</a>
+                    <a href="#">Profesores</a>
+                    <a href="#">Alumnos</a>
+                </div>
+                <div class="footer-columna">
+                    <h3>IMPORTANTE</h3>
+                    <p>Esta Academia de Cursos no aloja absolutamente ningún archivo en su servidor. Todos los derechos de autor, marcas comerciales y otros derechos de propiedad intelectual en el sitio Web y su contenido (incluyendo, sin limitación, el diseño del sitio, textos, gráficos y todo el software y códigos fuente relacionados con el Sitio Web).</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-copy-redes">
+            <div class="main-copy-redes">
+                <div class="footer-copy">
+                    &copy;2021, todos los derechos reservados - | C ACADEMY |.
+                </div>
+                <div class="footer-redes">
+                    <a href="#" class="icon icon-facebook" title="Facebook"></a>
+                    <a href="#" class="icon icon-twitter" title="Twitter"></a>
+                    <a href="#" class="icon icon-instagram" title="Instagram"></a>
+                    <a href="#" class="icon icon-youtube" title="Youtube"></a>
+                    <a href="#" class="icon icon-twitch" title="Twitch"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

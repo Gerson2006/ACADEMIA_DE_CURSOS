@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    .FrmContainer {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .FrmContainer h1 {
+            width: 100%;
+        }
+
+        .FrmContainer div {
+            width: 40%;
+            margin: 10px;
+        }
+
+            .FrmContainer div input {
+                width: 100%;
+            }
+</style>
+
+<div>
+    <h2> Datos del nuevo Alumno</h2>
+    <div class="FrmContainer">
+        <div hidden> Id: <input type="text" id="txtId" value="-1" /></div>
+        <div> Codigo del Alumno: <input class="form-control" type="number" id="txtCodigo" /></div>
+        <div> Nombres del Alumno: <input class="form-control" type="text" id="txtNombreCurso" /></div>
+        <div> Apellidos del Alumno: <input class="form-control" type="text" id="txtFechaRegistro" /></div>
+        <div> DNI: <input class="form-control" type="text" id="txtDNI" /></div>
+        <div> Fecha de Nacimiento: <input class="form-control" type="date" id="txtFechaNacimiento" /></div>
+        <div> Sexo: <input class="form-control" type="text" id="txtSexo" /></div>
+        <div> Telefono: <input class="form-control" type="number" id="txtTelefono" /></div>
+        <div> Direccion: <input class="form-control" type="text" id="txtDireccion" /></div>
+        <div> INSS: <input class="form-control" type="number" id="txtINSS" /></div>
+        <div> Nombre de la empresa(Opcional): <input class="form-control" type="text" id="txtNombreEmpresa" /></div>
+        <div> Telefono de la empresa(Opcional): <input class="form-control" type="number" id="txtTelefonoEmpresa" /></div>
+        <div> Direccion de la empresa(Opcional): <input class="form-control" type="text" id="txtDireccionEmpresa" /></div>
+        <div> Estado: <input class="form-control" type="text" id="txtActivo" /></div>
+        <div> Fecha Registro: <input class="form-control" type="date" id="txtFechaRegistro" /></div>
+    </div>
+    <div>
+        <input class="btn btn-primary" type="button" id="BtnDocente" value="Nuevo Docente" />
+        <input class="btn btn-primary" type="button" id="BtnFilt" value="Filtrar Docentes" />
+        <h2>
+            Datos Alumnos
+        </h2>
+        <table class="table table-bordered table-hover text-center" id="TblAlumnos">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>

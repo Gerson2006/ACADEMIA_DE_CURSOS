@@ -1,0 +1,12 @@
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\bin\Debug\netcoreapp3.1\CAPA_NGOCIO.deps.json
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\bin\Debug\netcoreapp3.1\CAPA_NGOCIO.dll
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\bin\Debug\netcoreapp3.1\CAPA_NGOCIO.pdb
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\bin\Debug\netcoreapp3.1\CAPA_DATOS.dll
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\bin\Debug\netcoreapp3.1\CAPA_DATOS.pdb
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.csprojAssemblyReference.cache
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.AssemblyInfoInputs.cache
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.AssemblyInfo.cs
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.csproj.CoreCompileInputs.cache
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.csproj.CopyComplete
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.dll
+D:\Descargas\Ejemplo\PRGBDCursos\CAPA_NGOCIO\obj\Debug\netcoreapp3.1\CAPA_NGOCIO.pdb

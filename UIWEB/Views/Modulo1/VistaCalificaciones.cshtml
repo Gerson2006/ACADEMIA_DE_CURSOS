@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    .FrmContainer {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .FrmContainer h1 {
+            width: 100%;
+        }
+
+        .FrmContainer div {
+            width: 40%;
+            margin: 10px;
+        }
+
+            .FrmContainer div input {
+                width: 100%;
+            }
+</style>
+
+<div>
+    <h2> Datos de las calificaciones</h2>
+    <div class="FrmContainer">
+        <div hidden> Id: <input type="text" id="txtId" value="-1" /></div>
+        <div> Codigo del curso: <input class="form-control" type="number" id="txtCodigo" /></div>
+        <div> Id Tarea: <input class="form-control" type="number" id="txtIdTarea" /></div>
+        <div> Id Alumno: <input class="form-control" type="number" id="txtIdAlumno" /></div>
+        <div> Notas: <input class="form-control" type="number" id="txtNota" /></div>
+        <div> Estado: <input class="form-control" type="text" id="txtActivo" /></div>
+        <div> Fecha Registro: <input class="form-control" type="date" id="txtFechaRegistro" /></div>
+    </div>
+    <div>
+        <input class="btn btn-primary" type="button" id="BtnDocente" value="Nuevo Docente" />
+        <input class="btn btn-primary" type="button" id="BtnFilt" value="Filtrar Docentes" />
+        <h2>
+            Datos Cursos
+        </h2>
+        <table class="table table-bordered table-hover text-center" id="TblCursos">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>

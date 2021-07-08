@@ -1,0 +1,169 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    .FrmContainer{
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    .FrmContainer h1{
+        width: 100%;
+    }
+        .FrmContainer div {
+            width: 40%;
+            margin: 10px;
+        }
+        .FrmContainer div input{
+            width: 100%;
+        }
+</style>
+<script>
+    function DrawTable(response, IdTable) {
+        document.getElementById(IdTable).querySelector("tbody").innerHTML = "";
+        response.forEach((Docente, index) => {
+            const tr = document.createElement("tr");            
+            document.getElementById(IdTable).querySelector("tbody").append(tr);
+            for (var prop in Docente) {
+                if (index == 0) {
+                    const th = document.createElement("th");
+                    th.innerText = prop;
+                    document.getElementById(IdTable).querySelector("thead").append(th);
+                }
+                const td = document.createElement("td");
+                td.innerText = Docente[prop];
+                tr.appendChild(td)
+            }
+            const thAction = document.createElement("th");
+            const BtnEdit = document.createElement("input");
+            BtnEdit.value = "Edit";
+            BtnEdit.type = "button";
+            const EditDocente = Docente;            
+            BtnEdit.onclick = () => {
+                console.log(EditDocente)
+                console.log(txtId)                        
+                txtId.value = EditDocente.Iddocente
+                txtCod.value = EditDocente.codig;
+                txtNombre.value = EditDocente.nombreDocente
+                txtApellido.value = EditDocente.apellidoDocente;
+                txtCedula.value = EditDocente.cedulaDocente;
+                txtFechaN.value = EditDocente.fechaNacimientoD;
+                txtGenero.value = EditDocente.generoDocente;
+                txtCiudad.value = EditDocente.CiudadD;
+                txtDireccion.value = EditDocente.direccionD;
+                txtTelefono.value = EditDocente.telefonoD;
+                txtFechaR.value = EditDocente.fechaRegistroD;
+                txtEstado.value = EditDocente.estadoDocente;
+
+            }
+            thAction.appendChild(BtnEdit);
+            tr.appendChild(thAction);
+        });
+    }
+
+    window.onload = () => {
+        BtnDocente.onclick = async () => {
+            try {
+                const NuevoDocente = {
+                    IdDocente: txtId.value,
+                    Codigo: txtCod.value,
+                    Nombres: txtNombre.value,
+                    Apellidos: txtApellido.value,
+                    DNI: txtCedula.value,
+                    FechaNacimiento: txtFechaN.value,
+                    Genero: txtGenero.value,
+                    Ciudad: txtCiudad.value,
+                    Direccion: txtDireccion.value,
+                    NumeroTelefono: txtTelefono.value,
+                    FechaRegistro: txtFechaR.value,
+                    Activo: txtEstado.value,
+
+
+                }
+                let flag = true;
+                document.querySelectorAll(".FrmContainer input").forEach(input => {
+                    if (input.value == "") {
+                        input.style.backgroundColor = "red";
+                        flag = false;
+                        console.log(input);
+                        
+                    }
+                });
+                console.log(flag);
+                if (flag == false) {
+                    console.log(flag);
+                    return;
+
+                   
+                    
+                }
+                let Url = "../api/Cat/PostSaveDocente";
+                let response = await fetch(Url, {
+                    method: 'POST', headers: {
+                       'Content-Type': "application/json; charset=utf-8",
+                        'Accept': "*/*"
+                    }, body: JSON.stringify(NuevoDocente)
+                });
+                response = await response.json();
+                console.log(response);
+                if (response == true) {
+                    alert("DATOS GUARDADOS CORRECTAMENTE!!!");
+                } else {
+                    alert("DATOS NO GUARDADOS!!!");
+                }
+            } catch (error) {
+                //trow;
+            }
+        }
+        BtnFilt.onclick = async () => {
+            try {
+                let Url = "../api/Cat/filtrarDocente";
+                let response = await fetch(Url, {
+                    method: 'POST', headers: {
+                        'Content-Type': "application/json; charset=utf-8",
+                        'Accept': "*/*"
+                    }//, body: JSON.stringify(Data)
+                });
+                response = await response.json();
+                console.log(response)
+                DrawTable(response, "TblDocente")
+            } catch (error) {
+                trow;
+            }
+        }
+
+    }
+</script>
+
+<div>
+    <h2> Datos del nuevo Docente</h2>
+    <div class="FrmContainer">
+        <div hidden> Id: <input type="text" id="txtId" value="-1" /></div>
+        <div> Codigo: <input class="form-control" type="text" id="txtCod" /></div>
+        <div> Nombres: <input class="form-control" type="text" id="txtNombre" /></div>
+        <div> Apellidos: <input class="form-control" type="text" id="txtApellido" /></div>
+        <div> Cedula: <input class="form-control" type="text" id="txtCedula" /></div>
+        <div> Fecha Nacimiento: <input class="form-control" type="date" id="txtFechaN" /></div>
+        <div> Genero: <input class="form-control" type="text" id="txtGenero" /></div>
+        <div> Ciudad: <input class="form-control" type="text" id="txtCiudad" /></div>
+        <div> Direccion: <input class="form-control" type="text" id="txtDireccion" /></div>
+        <div> Telefono: <input class="form-control" type="number" id="txtTelefono" /></div>
+        <div> Fecha Registro: <input class="form-control" type="date" id="txtFechaR" /></div>
+        <div> Estado: <input class="form-control" type="text" id="txtEstado" /></div>
+    </div>
+    <div>        
+        <input class="btn btn-primary" type="button" id="BtnDocente" value="Nuevo Docente" />
+        <input class="btn btn-primary" type="button" id="BtnFilt" value="Filtrar Docentes" />
+        <h2>
+            Datos Docentes
+        </h2>
+        <table class="table table-bordered table-hover text-center" id="TblDocente">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
